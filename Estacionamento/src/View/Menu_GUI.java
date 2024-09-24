@@ -29,21 +29,22 @@ public class Menu_GUI extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         dados = new javax.swing.JTable();
-        jLabel5 = new javax.swing.JLabel();
-        cod1_txt = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        nome1_txt = new javax.swing.JTextField();
+        consultarMarca_txt = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        end1_txt = new javax.swing.JTextField();
+        consultarModelo_txt = new javax.swing.JTextField();
         consultar_BTN = new javax.swing.JButton();
         alterar_BTN = new javax.swing.JButton();
         LIMPAR_BTN = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        consultarPlaca_txt = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        consultarHorarioEntrada_txt = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
-        cod2_txt = new javax.swing.JTextField();
+        excluirPlaca_txt = new javax.swing.JTextField();
         EXCLUIR_BTN = new javax.swing.JButton();
+        jSpinner1 = new javax.swing.JSpinner();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -77,23 +78,17 @@ public class Menu_GUI extends javax.swing.JFrame {
         jPanel2.add(jScrollPane1);
         jScrollPane1.setBounds(0, 0, 400, 90);
 
-        jLabel5.setText("CÓDIGO : ");
-        jPanel2.add(jLabel5);
-        jLabel5.setBounds(10, 100, 80, 30);
-        jPanel2.add(cod1_txt);
-        cod1_txt.setBounds(80, 100, 90, 30);
-
         jLabel6.setText("MARCA: ");
         jPanel2.add(jLabel6);
-        jLabel6.setBounds(10, 150, 70, 20);
-        jPanel2.add(nome1_txt);
-        nome1_txt.setBounds(80, 140, 190, 30);
+        jLabel6.setBounds(10, 140, 70, 30);
+        jPanel2.add(consultarMarca_txt);
+        consultarMarca_txt.setBounds(70, 140, 190, 30);
 
         jLabel7.setText("MODELO:");
         jPanel2.add(jLabel7);
-        jLabel7.setBounds(10, 190, 90, 14);
-        jPanel2.add(end1_txt);
-        end1_txt.setBounds(80, 180, 190, 30);
+        jLabel7.setBounds(10, 180, 90, 30);
+        jPanel2.add(consultarModelo_txt);
+        consultarModelo_txt.setBounds(70, 180, 190, 30);
 
         consultar_BTN.setText("CONSULTAR");
         consultar_BTN.addActionListener(new java.awt.event.ActionListener() {
@@ -124,9 +119,15 @@ public class Menu_GUI extends javax.swing.JFrame {
 
         jLabel8.setText("PLACA:");
         jPanel2.add(jLabel8);
-        jLabel8.setBounds(10, 220, 60, 30);
-        jPanel2.add(jTextField1);
-        jTextField1.setBounds(80, 220, 190, 30);
+        jLabel8.setBounds(10, 100, 60, 30);
+        jPanel2.add(consultarPlaca_txt);
+        consultarPlaca_txt.setBounds(70, 100, 190, 30);
+
+        jLabel10.setText("HORÁRIO DE ENTRADA:");
+        jPanel2.add(jLabel10);
+        jLabel10.setBounds(10, 230, 140, 30);
+        jPanel2.add(consultarHorarioEntrada_txt);
+        consultarHorarioEntrada_txt.setBounds(150, 230, 210, 30);
 
         jTabbedPane1.addTab("CONSULTAR/ ALTERAR", jPanel2);
 
@@ -139,9 +140,9 @@ public class Menu_GUI extends javax.swing.JFrame {
         jPanel3.add(jLabel9);
         jLabel9.setBounds(50, 20, 320, 70);
 
-        cod2_txt.setToolTipText("INSIRA O CÓDIGO A SER EXCLUIDO !");
-        jPanel3.add(cod2_txt);
-        cod2_txt.setBounds(140, 100, 120, 20);
+        excluirPlaca_txt.setToolTipText("INSIRA O CÓDIGO A SER EXCLUIDO !");
+        jPanel3.add(excluirPlaca_txt);
+        excluirPlaca_txt.setBounds(140, 100, 120, 22);
 
         EXCLUIR_BTN.setText("EXCLUIR ");
         EXCLUIR_BTN.addActionListener(new java.awt.event.ActionListener() {
@@ -151,6 +152,11 @@ public class Menu_GUI extends javax.swing.JFrame {
         });
         jPanel3.add(EXCLUIR_BTN);
         EXCLUIR_BTN.setBounds(150, 160, 100, 30);
+
+        jSpinner1.setModel(new javax.swing.SpinnerDateModel());
+        jSpinner1.setEditor(new javax.swing.JSpinner.DateEditor(jSpinner1, "\"yyyy-MM-dd HH:mm:ss\""));
+        jPanel3.add(jSpinner1);
+        jSpinner1.setBounds(120, 220, 160, 22);
 
         jTabbedPane1.addTab("EXCLUIR", jPanel3);
 
@@ -235,12 +241,12 @@ public class Menu_GUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void consultar_BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultar_BTNActionPerformed
-        //Model.CRUD_DAO.consultar();
+        Model.Menu_DAO.consultar();
 
     }//GEN-LAST:event_consultar_BTNActionPerformed
 
     private void alterar_BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alterar_BTNActionPerformed
-        //Model.CRUD_DAO.atualizar();
+        Model.Menu_DAO.alterar();
     }//GEN-LAST:event_alterar_BTNActionPerformed
 
     private void LIMPAR_BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LIMPAR_BTNActionPerformed
@@ -248,16 +254,7 @@ public class Menu_GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_LIMPAR_BTNActionPerformed
 
     private void EXCLUIR_BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EXCLUIR_BTNActionPerformed
-        //String x = JOptionPane.showInputDialog(null,"Deseja realmente excluir o registro?\n1-Sim\n2-Não");
-        //int op = Integer.parseInt(x);
-        //if(op == 1 ){
-          //  Model.CRUD_DAO.excluir();
-         //   JOptionPane.showMessageDialog(null,"Registro excluido com sucesso !");
-        //    cod2_txt.setText("");
-       //     refresh();
-      //  }else{
-       //     JOptionPane.showMessageDialog(null,"Registro não excluido");
-       // }
+        Model.Menu_DAO.excluir();
     }//GEN-LAST:event_EXCLUIR_BTNActionPerformed
 
     private void FECHAR_BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FECHAR_BTNActionPerformed
@@ -313,19 +310,21 @@ public class Menu_GUI extends javax.swing.JFrame {
     private javax.swing.JButton LIMPAR_BTN;
     private javax.swing.JButton SALVAR_BTN;
     private javax.swing.JButton alterar_BTN;
-    public static javax.swing.JTextField cod1_txt;
-    public static javax.swing.JTextField cod2_txt;
+    public static javax.swing.JTextField consultarHorarioEntrada_txt;
+    public static javax.swing.JTextField consultarMarca_txt;
+    public static javax.swing.JTextField consultarModelo_txt;
+    public static javax.swing.JTextField consultarPlaca_txt;
     private javax.swing.JButton consultar_BTN;
     public static javax.swing.JTable dados;
-    public static javax.swing.JTextField end1_txt;
+    public static javax.swing.JTextField excluirPlaca_txt;
     public static javax.swing.JTextField horarioe_txt;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -334,11 +333,10 @@ public class Menu_GUI extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSpinner jSpinner1;
     private javax.swing.JTabbedPane jTabbedPane1;
-    public static javax.swing.JTextField jTextField1;
     public static javax.swing.JTextField marca_txt;
     public static javax.swing.JTextField modelo_txt;
-    public static javax.swing.JTextField nome1_txt;
     public static javax.swing.JTextField placa_txt;
     // End of variables declaration//GEN-END:variables
 }
