@@ -22,6 +22,7 @@ public class Splash_GUI extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         barra = new javax.swing.JProgressBar();
         msg_txt = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -30,9 +31,17 @@ public class Splash_GUI extends javax.swing.JFrame {
 
         barra.setStringPainted(true);
         jPanel1.add(barra);
-        barra.setBounds(90, 200, 240, 20);
+        barra.setBounds(100, 420, 300, 30);
+
+        msg_txt.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        msg_txt.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.add(msg_txt);
-        msg_txt.setBounds(90, 240, 230, 20);
+        msg_txt.setBounds(20, 460, 470, 30);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE/gif-roda.gif"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(0, 0, 510, 510);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -45,7 +54,7 @@ public class Splash_GUI extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        setSize(new java.awt.Dimension(400, 300));
+        setSize(new java.awt.Dimension(512, 512));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -86,6 +95,7 @@ public class Splash_GUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JProgressBar barra;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     public static javax.swing.JLabel msg_txt;
     // End of variables declaration//GEN-END:variables
