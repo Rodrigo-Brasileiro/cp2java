@@ -27,27 +27,22 @@ public class Login_GUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         login_txt = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
         senha_txt = new javax.swing.JPasswordField();
         acessar_BTN = new javax.swing.JButton();
+        panelImage1 = new org.edisoncor.gui.panel.PanelImage();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         getContentPane().setLayout(null);
-
-        jLabel1.setText("LOGIN ");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(180, 60, 61, 25);
         getContentPane().add(login_txt);
-        login_txt.setBounds(120, 100, 160, 20);
-
-        jLabel2.setText("SENHA");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(180, 140, 50, 20);
+        login_txt.setBounds(120, 100, 160, 22);
         getContentPane().add(senha_txt);
-        senha_txt.setBounds(120, 180, 160, 20);
+        senha_txt.setBounds(120, 180, 160, 22);
 
         acessar_BTN.setText("ACESSAR");
         acessar_BTN.addActionListener(new java.awt.event.ActionListener() {
@@ -57,6 +52,33 @@ public class Login_GUI extends javax.swing.JFrame {
         });
         getContentPane().add(acessar_BTN);
         acessar_BTN.setBounds(150, 230, 90, 30);
+
+        panelImage1.setBackground(new java.awt.Color(204, 204, 204));
+        panelImage1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMAGE/BG1.png"))); // NOI18N
+        panelImage1.setLayout(null);
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("LOGIN ");
+        panelImage1.add(jLabel1);
+        jLabel1.setBounds(130, 60, 61, 25);
+
+        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
+        panelImage1.add(jPanel1);
+        jPanel1.setBounds(120, 60, 70, 30);
+
+        jPanel2.setBackground(new java.awt.Color(153, 153, 153));
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("SENHA");
+        jPanel2.add(jLabel2);
+
+        panelImage1.add(jPanel2);
+        jPanel2.setBounds(120, 140, 80, 30);
+
+        getContentPane().add(panelImage1);
+        panelImage1.setBounds(0, 0, 400, 300);
 
         setSize(new java.awt.Dimension(400, 300));
         setLocationRelativeTo(null);
@@ -106,7 +128,10 @@ public class Login_GUI extends javax.swing.JFrame {
     private javax.swing.JButton acessar_BTN;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     public static javax.swing.JTextField login_txt;
+    private org.edisoncor.gui.panel.PanelImage panelImage1;
     public static javax.swing.JPasswordField senha_txt;
     // End of variables declaration//GEN-END:variables
 }
